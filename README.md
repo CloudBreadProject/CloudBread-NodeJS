@@ -75,6 +75,7 @@ CloudBread는 오픈소스 프로젝트로, 누구나 참여 가능합니다. �
 
 ### Contributors
 *  
+* 김민정
 
 ---
 
