@@ -1,8 +1,11 @@
 ## 코드 가이드
 **https://github.com/airbnb/javascript** 참조하기!
 
-1. Async / Promise
-* Async 사용 
+1. Async module -> Promises
+https://www.npmjs.com/package/promise
+
+2. ORM -> Sequelize 
+http://docs.sequelizejs.com/manual/installation/getting-started.html
 
 ## 추가 가이드
 1. for ... in 쓰지 말것
