@@ -1,4 +1,4 @@
-# CloudBread-NodeJS
+﻿# CloudBread-NodeJS
 CloudBread is free OSS project for mobile game and mobile app server engine powered by cloud service. and this project is to create new CloudBread Core based on Node.js. so, It's in beta now.
 if you want to use stable version , go here
 
@@ -73,8 +73,19 @@ CloudBread와 관련된 이슈, 기능추가 및 변경, 버그 리포팅은 공
 
 CloudBread는 오픈소스 프로젝트로, 누구나 참여 가능합니다. 페이스북 개발자 그룹에 방문해 컨택 하실 수 있으며, 코드에 대한 참여와 공헌을 위해서 Pull Request를 해주시면 됩니다.
 
-
-
+### Contributors
+* 홍윤석
+* 김민정
+* 박권도
+* 김종현
+* 김선희
+* 최광익
+* 김정우
+<<<<<<< HEAD
+* 남규서
+* 
+=======
+>>>>>>> 818b3726f192094f9f3145c47d0cdb3c9c562ed5
 ---
 
 ### License
