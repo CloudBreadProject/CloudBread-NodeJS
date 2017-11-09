@@ -5,78 +5,83 @@ const config = require(__dirname + '/config/sequelize.json')[env];
 const sequelize = new Sequelize(config.database, config.username, config.password,config);
 const db = require('./models');
 
-// sequelize.Sequelize.Promise.all([
-// 	db.MemberItemPurchase.belongsTo(db.Member,{
-// 		foreignKey : 'MemberID',
-// 		targetKey : 'MemberID'
-// 	}),
-// 	db.MemberItemPurchase.belongsTo(db.ItemList, {
-// 		foreignKey : 'ItemListID', 
-// 		targetKey : 'ItemListID'
-// 	}),
-// 	db.MemberItems.belongsTo(db.Member, {
-// 		foreignKey : 'MemberID', 
-// 		targetKey : 'MemberID'
-// 	}),
-// 	db.MemberItems.belongsTo(db.ItemList, {
-// 		foreignKey : 'ItemListID', 
-// 		targetKey : 'ItemListID'
-// 	}),
-// 	db.MemberGameInfoStages.belongsTo(db.Member, {
-// 		foreignKey : 'MemberID', 
-// 		targetKey : 'MemberID'
-// 	}),
-// 	db.GiftDepository.belongsTo(db.ItemList, {
-// 		foreignKey : 'ItemListID',
-// 		targetKey : 'ItemListID'
-// 	}),
-// 	db.GiftDepository.belongsTo(db.Member, {
-// 		foreignKey : 'FromMemberID',
-// 		targetKey : 'MemberID'	
-// 	}),
-// 	db.GiftDepository.belongsTo(db.Member,{
-// 		foreignKey : 'ToMemberID',
-// 		targetKey : 'MemberID'
-// 	}),
-// 	db.GameEvents.belongsTo(db.ItemList,{
-// 		foreignKey : 'ItemListID',
-// 		targetKey : 'ItemListID'
-// 	}),
-// 	db.Coupon.belongsTo(db.ItemList,{
-// 		foreignKey : 'ItemListID',
-// 		targetKey : 'ItemListID'
-// 	}),
-// 	db.CouponMember.belongsTo(db.Coupon,{
-// 		foreignKey : 'CouponID',
-// 		targetKey : 'CouponID'
-// 	}),
-// 	db.CouponMember.belongsTo(db.Member,{
-// 		foreignKey : 'MemberID',
-// 		targetKey : 'MemberID'
-// 	}),
-// 	db.MemberAccountBlockLog.belongsTo(db.Member,{
-// 		foreignKey : 'MemberID',
-// 		targetKey : 'MemberID'
-// 	})
-// 	])
-// 	.catch(function(err){
-// 		console.log(err);
-// 	})
 
-sequelize.Sequelize.Promise.all([
-	db.Member.sync(),
-	db.AdminMember.sync(),
-	db.ItemList.sync(),
-	db.MemberItems.sync(),
-	db.MemberGameInfo.sync(),
-	db.MemberGameInfoStages.sync(),
-	db.MemberAccountBlockLog.sync(),
-	db.MemberItemPurchase.sync(),
-	db.Coupon.sync(),
-	db.CouponMember.sync(),
-	db.GameEvents.sync(),
-	db.GiftDepository.sync(),
-	db.Notices.sync(),
-	db.ServerInfo.sync(),
-	db.StatData.sync()
-	])
+
+
+	sequelize.Sequelize.Promise.all([
+		db.Member.hasMany(db.MemberItems, {
+			foreignKey : 'MemberID', 
+			targetKey : 'MemberID'
+		}),
+		db.ItemList.hasMany(db.MemberItems, {
+			foreignKey : 'ItemListID', 
+			targetKey : 'ItemListID'
+		}),
+		db.Member.hasMany(db.MemberGameInfoStages, {
+			foreignKey : 'MemberID', 
+			targetKey : 'MemberID'
+		}),
+		db.ItemList.hasMany(db.GiftDepository, {
+			foreignKey : 'ItemListID',
+			targetKey : 'ItemListID'
+		}),
+		db.Member.hasMany(db.GiftDepository, {
+			foreignKey : 'FromMemberID',
+			targetKey : 'MemberID'	
+		}),
+		db.Member.hasMany(db.GiftDepository,{
+			foreignKey : 'ToMemberID',
+			targetKey : 'MemberID'
+		}),
+		db.ItemList.hasMany(db.GameEvents,{
+			foreignKey : 'ItemListID',
+			targetKey : 'ItemListID'
+		}),
+		db.ItemList.hasMany(db.Coupon,{
+			foreignKey : 'ItemListID',
+			targetKey : 'ItemListID'
+		}),
+		db.Coupon.hasMany(db.CouponMember,{
+			foreignKey : 'CouponID',
+			targetKey : 'CouponID'
+		}),
+		db.Member.hasMany(db.CouponMember,{
+			foreignKey : 'MemberID',
+			targetKey : 'MemberID'
+		}),
+		db.Member.hasMany(db.MemberAccountBlockLog,{
+			foreignKey : 'MemberID',
+			targetKey : 'MemberID'
+		}),
+		db.ItemList.hasMany(db.MemberItemPurchase, {
+			foreignKey : 'ItemListID', 
+			targetKey : 'ItemListID'
+		}),
+		db.Member.hasMany(db.MemberItemPurchase, {
+			foreignKey : 'MemberID',
+			targetKey : 'MemberID'
+		})
+		])
+		.catch(function(err){
+			console.log(err);
+		})
+	sequelize.Sequelize.Promise.all([
+		db.Member.sync(),
+		db.AdminMember.sync(),
+		db.ItemList.sync(),
+		db.MemberItems.sync(),    
+		db.MemberGameInfo.sync(),
+		db.MemberGameInfoStages.sync(),
+		db.MemberAccountBlockLog.sync(),
+		db.MemberItemPurchase.sync(), //이거 
+		db.Coupon.sync(),
+		db.CouponMember.sync(),
+		db.GameEvents.sync(),
+		db.GiftDepository.sync(),
+		db.Notices.sync(),
+		db.ServerInfo.sync(), // 이거
+		db.StatData.sync()
+		])
+		.catch(function(err){
+			console.log(err);
+		})

@@ -4,6 +4,6 @@ const env = process.env.NODE_ENV || "development";
 const config = require(__dirname + '/config/sequelize.json')[env];
 const sequelize = new Sequelize(config.database, config.username, config.password,config);
 const db = require('./models');
-//db.Member.create({MemberID : 'sherry92', DataFromRegion : 'test'});
+db.Member.create({MemberID : 'sherry92', DataFromRegion : 'test'});
 db.Member.sync();
-db.MemberItemPurchase.sync();
+//db.MemberItemPurchase.sync();
