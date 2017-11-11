@@ -1,11 +1,11 @@
 {
   "development": {
-    "username": "sherry92",
-    "password": "@antjs3671",
-    "database": "tt",
+    "username": "jung1",
+    "password": "1234",
+    "database": "Test",
     "host": "127.0.0.1",
-    "port": 3306,
-    "dialect": "mysql",
+    "port": 1433,
+    "dialect": "mssql",
     "pool" : {
       "max" : 5,
       "min" : 0,

@@ -4,17 +4,20 @@ const env = process.env.NODE_ENV || "development";
 const config = require(__dirname + '/../config/sequelize.json')[env];
 const sequelize = new Sequelize(config.database, config.username, config.password,config);
 
-module.exports = function(sequelize, DataTypes) {
-	const MemberItemPurchase = sequelize.define('MemberItemPurchase',{
+
+module.exports = (sequelize, DataTypes) => {
+	return sequelize.define('MemberItemPurchase',{
 				MemberItemPurchaseID:{
 					type : Sequelize.STRING(128),
 					primaryKey : true 
 				},
 				MemberID:{
-					type : Sequelize.STRING(256)
+					type : Sequelize.STRING,
+					allowNull : false
 				},
 				ItemListID:{
-					type : Sequelize.STRING(128)
+					type : Sequelize.STRING(128),
+					allowNull : false
 				},
 				PurchasePrice:{
 					type : Sequelize.STRING(50)
@@ -127,5 +130,4 @@ module.exports = function(sequelize, DataTypes) {
 			},{
 				freezeTableName : true
 			});
-	return MemberItemPurchase;
-};
+}

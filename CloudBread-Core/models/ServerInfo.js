@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes)=>{
 					type : Sequelize.STRING(4000)
 				},
 				EULAText:{
-					type : Sequelize.STRING(8000)
+					type : Sequelize.STRING(4000)//이새끼 테이블정의 8천인데... 4천이 한계라서ㅠㅠㅠ
 				},
 				DataFromRegion:{
 					type : Sequelize.STRING(64),
