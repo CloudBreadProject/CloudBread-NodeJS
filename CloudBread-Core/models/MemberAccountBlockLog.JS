@@ -13,56 +13,88 @@ module.exports = (sequelize, DataTypes)=>{
 				},
 				MemberID:{
 					type : Sequelize.STRING(256),
-					allowNull : false
+					allowNull : false,
+					defaultValue : ''
 				},
 				MemberAccountBlockReasonCategory1:{
-					type : Sequelize.STRING(50)
+					type : Sequelize.STRING(50),
+					allowNull : false,
+					defaultValue : ''
 				},
 				MemberAccountBlockReasonCategory2:{
-					type : Sequelize.STRING(50)
+					type : Sequelize.STRING(50),
+					allowNull : false,
+					defaultValue : ''
 				},
 				MemberAccountBlockReasonCategory3:{
-					type : Sequelize.STRING(50)
+					type : Sequelize.STRING(50),
+					allowNull : false,
+					defaultValue : ''
 				},
 				MemberAccountBlockReason:{
-					type : Sequelize.STRING(1000)
+					type : Sequelize.STRING(1000),
+					allowNull : false,
+					defaultValue : ''
 				},
 				MemberAccountBlockProcess:{
-					type : Sequelize.STRING(50)
+					type : Sequelize.STRING(50),
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol1:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol2:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol3:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol4:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol5:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol6:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol7:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol8:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol9:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol10:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				CreateAdminID:{
 					type : Sequelize.STRING(128),
-					allowNull : false
+					allowNull : false,
+					defaultValue : ''
 				},
 				HideYN:{
 					type : Sequelize.STRING(1),
@@ -76,11 +108,13 @@ module.exports = (sequelize, DataTypes)=>{
 				},
 				DataFromRegion:{
 					type : Sequelize.STRING(64),
-					allowNull : false
+					allowNull : false,
+					defaultValue : ''
 				},
 				DataFromRegionDT:{
 					type : Sequelize.DATE,
-					allowNull : false
+					allowNull : false,
+					defaultValue : sequelize.fn('NOW')
 				}
 			},{
 				freezeTableName : true

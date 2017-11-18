@@ -5,23 +5,21 @@ const config = require(__dirname + '/../config/sequelize.json')[env];
 const sequelize = new Sequelize(config.database, config.username, config.password,config);
 
 module.exports = (sequelize, DataTypes)=>{
-	return sequelize.define('StatData',{
-				StatID:{
-					type : Sequelize.STRING(50),
+	return sequelize.define('GameEventMember',{
+				GameEventMemberID:{
+					type : Sequelize.STRING(128),
 					primaryKey : true,
 					defaultValue : DataTypes.UUIDV4
 				},
-				CategoryName:{
-					type : Sequelize.STRING
+				eventID:{
+					type : Sequelize.STRING(128),
+					allowNull : false,
+					defaultValue : ''
 				},
-				CountNum:{
-					type : Sequelize.BIGINT
-				},
-				Fields:{
-					type : Sequelize.STRING(4000)
-				},
-				Groups:{
-					type : Sequelize.STRING(100)
+				MemberID:{
+					type : Sequelize.STRING(256),
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol1:{
 					type : Sequelize.STRING,
@@ -47,6 +45,41 @@ module.exports = (sequelize, DataTypes)=>{
 					type : Sequelize.STRING,
 					allowNull : false,
 					defaultValue : ''
+				},
+				sCol6:{
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
+				},
+				sCol7:{
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
+				},
+				sCol8:{
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
+				},
+				sCol9:{
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
+				},
+				sCol10:{
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
+				},
+				HideYN:{
+					type : Sequelize.STRING(1),
+					allowNull : false,
+					defaultValue : 'N'
+				},
+				DeleteYN:{
+					type : Sequelize.STRING(1),
+					allowNull : false,
+					defaultValue : 'N'
 				},
 				DataFromRegion:{
 					type : Sequelize.STRING(64),

@@ -11,93 +11,139 @@ module.exports = (sequelize, DataTypes)=>{
 					primaryKey : true
 				},
 				AdminMemberPWD:{
-					type : Sequelize.STRING(128)
+					type : Sequelize.STRING(128),
+					allowNull : false,
+					defaultValue : ''
 				},
 				AdminMemberEmail:{
-					type : Sequelize.STRING(128),
-					unique : true
+					type : Sequelize.STRING(256),
+					allowNull : false,
+					defaultValue : ''
 				},
 				IDCreateAdminMember:{
-					type : Sequelize.STRING(128)
+					type : Sequelize.STRING(128),
+					allowNull : false,
+					defaultValue : ''
 				},
 				AdminGroup:{
-					type : Sequelize.STRING(40)
+					type : Sequelize.STRING(40),
+					allowNull : false,
+					defaultValue : ''
 				},
 				TimeZoneID:{
 					type : Sequelize.STRING(40),
+					allowNull : false,
 					defaultValue : '2100'
 				},
 				PINumber:{
-					type : Sequelize.STRING(50)
+					type : Sequelize.STRING(50),
+					allowNull : false,
+					defaultValue : ''
 				},
 				Name1:{
-					type : Sequelize.STRING(50)
+					type : Sequelize.STRING(50),
+					allowNull : false,
+					defaultValue : ''
 				},
 				Name2:{
-					type : Sequelize.STRING(50)
+					type : Sequelize.STRING(50),
+					allowNull : false,
+					defaultValue : ''
 				},
 				Name3:{
-					type : Sequelize.STRING(50)
+					type : Sequelize.STRING(50),
+					allowNull : false,
+					defaultValue : ''
 				},
 				DOB:{
-					type : Sequelize.STRING(16)
+					type : Sequelize.STRING(16),
+					allowNull : false,
+					defaultValue : ''
 				},
 				LastIPaddress:{
-					type : Sequelize.STRING(32)
+					type : Sequelize.STRING(32),
+					allowNull : false,
+					defaultValue : ''
 				},
 				LastLoginDT:{
-					type : Sequelize.STRING(32)
+					type : Sequelize.STRING(32),
+					allowNull : false,
+					defaultValue : ''
 				},
 				LastLogoutDT:{
-					type : Sequelize.STRING(32)
+					type : Sequelize.STRING(32),
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol1:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol2:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol3:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol4:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol5:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol6:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol7:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol8:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol9:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol10:{
-					type : Sequelize.STRING
-				},
-				DeleteYN:{
-					type : Sequelize.STRING(1),
+					type : Sequelize.STRING,
 					allowNull : false,
-					defaultValue : 'N'
+					defaultValue : ''
 				},
 				HideYN:{
 					type : Sequelize.STRING(1),
 					allowNull : false,
 					defaultValue : 'N'
 				},
+				DeleteYN:{
+					type : Sequelize.STRING(1),
+					allowNull : false,
+					defaultValue : 'N'
+				},
 				DataFromRegion:{
 					type : Sequelize.STRING(64),
-					allowNull : false
+					allowNull : false,
+					defaultValue : ''
 				},
 				DataFromRegionDT:{
 					type : Sequelize.DATE,
-					allowNull : false
+					allowNull : false,
+					defaultValue : sequelize.fn('NOW')
 				}
 			},{
 				freezeTableName : true

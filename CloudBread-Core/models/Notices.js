@@ -12,61 +12,99 @@ module.exports = (sequelize, DataTypes)=>{
 					defaultValue : DataTypes.UUIDV4
 				},
 				NoticeCategory1:{
-					type : Sequelize.STRING(50)
+					type : Sequelize.STRING(50),
+					allowNull : false,
+					defaultValue : ''
 				},
 				NoticeCategory2:{
-					type : Sequelize.STRING(50)
+					type : Sequelize.STRING(50),
+					allowNull : false,
+					defaultValue : ''
 				},
 				NoticeCategory3:{
-					type : Sequelize.STRING(50)
+					type : Sequelize.STRING(50),
+					allowNull : false,
+					defaultValue : ''
 				},
 				TargetGroup:{
-					type : Sequelize.STRING(50)
+					type : Sequelize.STRING(50),
+					allowNull : false,
+					defaultValue : ''
 				},
 				TargetOS:{
-					type : Sequelize.STRING(50)
+					type : Sequelize.STRING(50),
+					allowNull : false,
+					defaultValue : ''
 				},
 				TargetDevice:{
-					type : Sequelize.STRING(80)
+					type : Sequelize.STRING(80),
+					allowNull : false,
+					defaultValue : ''
 				},
 				NoticeImageLink:{
-					type : Sequelize.STRING(512)
+					type : Sequelize.STRING(512),
+					allowNull : false,
+					defaultValue : ''
 				},
 				Title:{
-					type : Sequelize.STRING(100)
+					type : Sequelize.STRING(100),
+					allowNull : false,
+					defaultValue : ''
 				},
 				Content:{
-					type : Sequelize.STRING(4000)
+					type : Sequelize.STRING(4000),
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol1:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol2:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol3:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol4:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol5:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol6:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol7:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol8:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol9:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},
 				sCol10:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING,
+					allowNull : false,
+					defaultValue : ''
 				},	
 				NoticeDurationFrom:{
 					type : Sequelize.DATE,
@@ -102,11 +140,13 @@ module.exports = (sequelize, DataTypes)=>{
 				},
 				DataFromRegion:{
 					type : Sequelize.STRING(64),
-					allowNull : false
+					allowNull : false,
+					defaultValue : ''
 				},
 				DataFromRegionDT:{
 					type : Sequelize.DATE,
-					allowNull : false
+					allowNull : false,
+					defaultValue : sequelize.fn('NOW')
 				}
 			},{
 				freezeTableName : true

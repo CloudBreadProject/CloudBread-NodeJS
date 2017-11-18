@@ -5,9 +5,6 @@ const config = require(__dirname + '/config/sequelize.json')[env];
 const sequelize = new Sequelize(config.database, config.username, config.password,config);
 const db = require('./models');
 
-
-
-
 	sequelize.Sequelize.Promise.all([
 		db.Member.hasMany(db.MemberItems, {
 			foreignKey : 'MemberID', 
@@ -60,26 +57,26 @@ const db = require('./models');
 		db.Member.hasMany(db.MemberItemPurchase, {
 			foreignKey : 'MemberID',
 			targetKey : 'MemberID'
-		})
-		])
-		.catch(function(err){
-			console.log(err);
-		})
-	sequelize.Sequelize.Promise.all([
+		}),
+		db.Member.hasMany(db.GameEventMember,{
+			foreignKey : 'MemberID',
+			targetKey : 'MemberID'
+		}),
 		db.Member.sync(),
-		db.AdminMember.sync(),
-		db.ItemList.sync(),
-		db.MemberItems.sync(),    
+		db.AdminMember.sync(), 
+		db.ItemList.sync(),    
+		db.Notices.sync(),
+		db.ServerInfo.sync(), 
+		db.StatData.sync(),
 		db.MemberGameInfo.sync(),
 		db.MemberGameInfoStages.sync(),
 		db.MemberAccountBlockLog.sync(),
-		db.MemberItemPurchase.sync(), //이거 
-		db.GameEvents.sync(),
-		db.Notices.sync(),
-		db.ServerInfo.sync(), // 이거
-		db.StatData.sync(),
+		db.MemberItemPurchase.sync(),  
+		db.MemberItems.sync(),
 		db.GiftDepository.sync(),
-		db.Coupon.sync(),
+		db.GameEvents.sync(),
+		db.GameEventMember.sync(),  
+		db.Coupon.sync(), // 2
 		db.CouponMember.sync()
 		])
 		.catch(function(err){
