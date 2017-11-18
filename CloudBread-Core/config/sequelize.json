@@ -4,6 +4,7 @@
     "password": "1234",
     "database": "Test",
     "host": "127.0.0.1",
+    "timezone": "+09:00",
     "port": 1433,
     "dialect": "mssql",
     "pool" : {

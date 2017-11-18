@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes)=>{
 	return sequelize.define('Notices',{
 				NoticeID:{
 					type : Sequelize.STRING(128),
-					primaryKey : true
+					primaryKey : true,
+					defaultValue : DataTypes.UUIDV4
 				},
 				NoticeCategory1:{
 					type : Sequelize.STRING(50)

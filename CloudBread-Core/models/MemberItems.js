@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes)=>{
 					primaryKey : true
 				},
 				MemberID:{
-					type : Sequelize.STRING,
+					type : Sequelize.STRING(256),
 					allowNull : false
 				},
 				ItemListID:{

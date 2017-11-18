@@ -7,7 +7,7 @@ const sequelize = new Sequelize(config.database, config.username, config.passwor
 module.exports = function(sequelize, DataTypes) {
 	const Member = sequelize.define('Member', {
 				MemberID:{
-					type : Sequelize.STRING,
+					type : Sequelize.STRING(256),
 					primaryKey : true
 				},
 				MemberPWD:{
@@ -145,7 +145,8 @@ module.exports = function(sequelize, DataTypes) {
 //					defaultVale : Sequelize.NOW
 				}
 			},{
-				freezeTableName:true
+				freezeTableName:true,
+				timestamps: true
 			});
 	return Member;
 };
