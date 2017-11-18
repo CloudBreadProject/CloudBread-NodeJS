@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes)=>{
 	return sequelize.define('StatData',{
 				StatID:{
 					type : Sequelize.STRING(50),
-					primaryKey : true
+					primaryKey : true,
+					defaultValue : DataTypes.UUIDV4
 				},
 				CategoryName:{
 					type : Sequelize.STRING

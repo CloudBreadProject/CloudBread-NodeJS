@@ -7,7 +7,7 @@ const sequelize = new Sequelize(config.database, config.username, config.passwor
 module.exports = (sequelize, DataTypes)=>{
 	return sequelize.define('MemberGameInfo',{
 				MemberID:{
-					type : Sequelize.STRING,
+					type : Sequelize.STRING(256),
 					primaryKey : true
 				},
 				Level:{

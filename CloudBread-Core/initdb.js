@@ -74,13 +74,13 @@ const db = require('./models');
 		db.MemberGameInfoStages.sync(),
 		db.MemberAccountBlockLog.sync(),
 		db.MemberItemPurchase.sync(), //이거 
-		db.Coupon.sync(),
-		db.CouponMember.sync(),
 		db.GameEvents.sync(),
-		db.GiftDepository.sync(),
 		db.Notices.sync(),
 		db.ServerInfo.sync(), // 이거
-		db.StatData.sync()
+		db.StatData.sync(),
+		db.GiftDepository.sync(),
+		db.Coupon.sync(),
+		db.CouponMember.sync()
 		])
 		.catch(function(err){
 			console.log(err);

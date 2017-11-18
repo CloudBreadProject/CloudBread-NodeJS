@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes)=>{
 	return sequelize.define('GiftDepository',{
 				GiftDepositoryID:{
 					type : Sequelize.STRING(128),
-					primaryKey : true
+					primaryKey : true,
+					defaultValue : DataTypes.UUIDV4
 				},
 				ItemListID:{
 					type : Sequelize.STRING(128),
@@ -18,11 +19,11 @@ module.exports = (sequelize, DataTypes)=>{
 					type : Sequelize.STRING(40)
 				},
 				FromMemberID:{
-					type : Sequelize.STRING,
+					type : Sequelize.STRING(256),
 					allowNull : false
 				},
 				ToMemberID:{
-					type : Sequelize.STRING,
+					type : Sequelize.STRING(256),
 					allowNull : false
 				},
 				sCol1:{

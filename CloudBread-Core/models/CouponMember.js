@@ -8,14 +8,15 @@ module.exports = (sequelize, DataTypes)=>{
 	return sequelize.define('CouponMember',{
 				CouponMemberId:{
 					type : Sequelize.STRING(128),
-					primaryKey : true
+					primaryKey : true,
+					defaultValue : DataTypes.UUIDV4
 				},
 				CouponID:{
 					type : Sequelize.STRING(128),
 					allowNull : false
 				},
 				MemberID:{
-					type : Sequelize.STRING,
+					type : Sequelize.STRING(256),
 					allowNull : false
 				},
 				sCol1:{
@@ -65,7 +66,7 @@ module.exports = (sequelize, DataTypes)=>{
 				DataFromRegionDT:{
 					type : Sequelize.DATE,
 					allowNull : false
-				}	
+				}
 			},{
 				freezeTableName : true
 			});

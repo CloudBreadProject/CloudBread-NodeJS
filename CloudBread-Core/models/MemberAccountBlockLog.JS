@@ -8,10 +8,11 @@ module.exports = (sequelize, DataTypes)=>{
 	return sequelize.define('MemberAccountBlockLog',{
 				MemberAccountBlockID:{
 					type : Sequelize.STRING(128),
-					primaryKey : true
+					primaryKey : true,
+					defaultValue : DataTypes.UUIDV4
 				},
 				MemberID:{
-					type : Sequelize.STRING,
+					type : Sequelize.STRING(256),
 					allowNull : false
 				},
 				MemberAccountBlockReasonCategory1:{
@@ -80,7 +81,7 @@ module.exports = (sequelize, DataTypes)=>{
 				DataFromRegionDT:{
 					type : Sequelize.DATE,
 					allowNull : false
-				}	
+				}
 			},{
 				freezeTableName : true
 			});

@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes)=>{
 	return sequelize.define('GameEvents',{
 				GameEventID:{
 					type : Sequelize.STRING(128),
-					primaryKey : true
+					primaryKey : true,
+					defaultValue : DataTypes.UUIDV4
 				},
 				eventCategory1:{
 					type : Sequelize.STRING(50)

@@ -8,10 +8,11 @@ module.exports = (sequelize, DataTypes)=>{
 	return sequelize.define('MemberGameInfoStages',{
 				MemberGameInfoStagesID:{
 					type : Sequelize.STRING(128),
-					primaryKey : true
+					primaryKey : true,
+					defaultValue : DataTypes.UUIDV4
 				},
 				MemberID:{
-					type : Sequelize.STRING
+					type : Sequelize.STRING(256)
 				},
 				StageName:{
 					type : Sequelize.STRING(100)

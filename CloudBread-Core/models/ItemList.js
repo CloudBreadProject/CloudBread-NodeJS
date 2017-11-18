@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes)=>{
 	return sequelize.define('ItemList',{
 				ItemListID:{
 					type : Sequelize.STRING(128),
-					primaryKey : true
+					primaryKey : true,
+					defaultValue : DataTypes.UUIDV4
 				},
 				ItemName:{
 					type : Sequelize.STRING(12),
