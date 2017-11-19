@@ -1,5 +1,5 @@
 {
-  "name": "cloudbreadnodejs",
+  "name": "cloudbread-core",
   "version": "0.0.0",
   "private": true,
   "scripts": {
